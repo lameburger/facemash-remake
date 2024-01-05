@@ -1,0 +1,165 @@
+
+
+body {  
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(178,233,250,1) 100%);
+  font-family: "Mona Sans","Mona Sans Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#name-text {
+  white-space: break-word;
+}
+
+.container {
+  padding-top: 0%;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#logo {
+  padding-top: 10%;
+}
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #8B0200;
+}
+
+#hoho {
+  border: 5px solid #777;
+}
+
+.column {
+    float: left;
+    width: 50%; 
+    padding-right: 1%;
+    padding-left: 1%;
+  }
+
+/* .row1 {
+  margin: 0;
+  position: absolute;
+  top: 35%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+} */
+
+.column1 {
+    float: left;
+    width: 33.333%;
+  }
+  
+  .row1::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+#compare {
+  color: #777;
+}
+
+#me {
+  color: #638C5E;
+}
+
+#choose-text {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+
+#name-text {
+    text-align: center;
+}
+#score-text {
+    text-align: center;
+    color: #638C5E;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #8B0200;
+    border-color: #8B0200;
+}
+
+.h3, h3 {
+    font-size: 2rem;
+}
+
+h2 {
+    color: black;
+}
+
+table th {
+  text-align: center; 
+}
+
+.table {
+  margin: auto;
+  width: 50% !important; 
+}
+
+ul.nav {
+    padding-left: 0px;
+    background-color: #211A1D;
+    text-align: center;
+  }
+  ul.nav > li {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+  ul.nav > li:hover {
+    background-color: white;
+  }
+  ul.nav > li > a {
+    color: #F8F0FB;
+    text-decoration: none;
+  }
+  
+  hr {
+    width: 90%;
+    border: 5px solid #F8F0FB;
+    border-radius: 5px;
+  }
+
+  #list {
+    font-size: 3rem;
+  }
+
+  #me, #compare {
+    font-size:12vw;
+  }
+
+  #hoho {
+    width: 100%;
+  }
+
+  #leaderboard-text {
+    font-size: 12vm;
+    padding-top: 8%;
+  }
+
+  #leaderboard-pic {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 600px) {
+    #hoho {
+      width: 50%;
+    }
+    #compare, #me{
+      font-size: 5vw;
+    }
+    #leaderboard-text {
+      font-size: 5vm;
+    }
+    #leaderboard-pic {
+      width: 100%;
+    }
+  }

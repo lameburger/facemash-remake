@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    {% set img1, id1 = "%04d.jpg"|format(girl1["id"]), girl1["id"] %}
+    {% set img2, id2 = "%04d.jpg"|format(girl2["id"]), girl2["id"] %}
+    <form id="random" action="/" method="POST">
+        <input type="text" id="id1" name="id1" hidden>
+        <input type="text" id="id2" name="id2" hidden>
+    </form>
+    <form id="send" action="/" method="POST">
+        <input type="text" id="winnerField" name="winner" hidden>
+        <input type="text" id="loserField" name="loser" hidden>
+    </form>
+    {% if girl1["id"] == 0 or girl2["id"] == 0 %}
+        <script>generateIDS({{ MAX_ID }});</script>
+    {% endif %}
+    <div class="container">
+        <h1 class="mx-auto text-center"><span id="compare">Which</span><span id="me"> One?</span></h1>
+    
+        <br>
+
+        <div class="row1">
+            <div class="column text-center">
+
+
+                <img id="hoho" src="static/images/{{ img1 }}" alt="{{ img1 }}" onclick="sendWinner({{ id1 }}, {{ id2 }})">
+                <h3 class="display-6" id="score-text">Rating: {{ girl1["elo"] }}</h3>
+            </div>
+            <div class="column text-center">
+                <img id="hoho" src="static/images/{{ img2 }}" alt="{{ img2 }}" onclick="sendWinner({{ id2 }}, {{ id1 }})">
+                <h3 class="display-6" id="score-text">Rating: {{ girl2["elo"] }}</h3> 
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-muted" id="leaderboard-text">Leaderboard</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <table id="leaderboard" class="table text-center table-bordered">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>ELO</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ol>
+                        {% for girl in girls %}
+                        {% set img = "%04d.jpg" % girl["id"] %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ girl["elo"] }}</td>
+                            <td><img id="leaderboard-pic" src="static/images/{{ img }}"></td>
+                        </tr>
+                        {% endfor %}
+                    </ol>            
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src=https://code.jquery.com/jquery-3.5.1.js></script>
+    <script src=https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js></script>
+    <script src=https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js></script>
+    <script src="static/scripts/app.js"></script>
+    <script type="text/javascript">
+        history.pushState(null, document.title, location.href);
+        window.addEventListener('popstate', function (event)
+        {
+        history.pushState(null, document.title, location.href);
+        });
+    </script>
+{% endblock %}
+
